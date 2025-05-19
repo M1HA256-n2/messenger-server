@@ -1,11 +1,7 @@
 import os, json
-
-type
-  ServerConfig* = object
-    address*: string
-    port*: int
+import ../types/ServerConfiguration
     
-proc parse*(filename: string): ServerConfig =
+proc parse*(filename: string): ServerConfiguration =
   #Setup configuration constants
   if not os.fileExists(filename):
     echo "Configuration file not found. Make sure your ", filename, " exist."
